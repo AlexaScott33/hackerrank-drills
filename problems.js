@@ -168,12 +168,33 @@ function Rectangle2(a, b) {
   };
 }
 
-Rectangle2(2, 4);
-console.log(Rectangle2.length);
-console.log(Rectangle2.perimeter);
+// Rectangle2(2, 4);
+// console.log(Rectangle2.length);
+// console.log(Rectangle2.perimeter);
 
 
+/////////////////////// COUNT OBJECTS ///////////////////////
+/*
+ * Return a count of the total number of objects 'o' satisfying o.x == o.y.
+ * 
+ * Parameter(s):
+ * objects: an array of objects with integer properties 'x' and 'y'
+ */
+function getCount(objects) {
+  let counter = 0;
+  for (let obj in objects) {
+    // console.log(objects[obj].x);
+    // console.log(objects[obj].y);
 
+    if (objects[obj].x == objects[obj].y) {
+      counter++;
+    }
+  }
+  console.log(counter);
+  return counter;
+}
+
+getCount([{x: 1, y: 1}, {x: 2, y: 1}, {x: 3, y: 3}, {x: 0, y: 3}, {x: 5, y: 5}]);
 
 
 
