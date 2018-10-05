@@ -194,7 +194,47 @@ function getCount(objects) {
   return counter;
 }
 
-getCount([{x: 1, y: 1}, {x: 2, y: 1}, {x: 3, y: 3}, {x: 0, y: 3}, {x: 5, y: 5}]);
+// getCount([{x: 1, y: 1}, {x: 2, y: 1}, {x: 3, y: 3}, {x: 0, y: 3}, {x: 5, y: 5}]);
 
+/////////////////////// TWO SUM ///////////////////////
+/*
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+// https://coderbyte.com/algorithm/two-sum-problem
+//O(N^2)
+//USE HASH TABLE TO OPTIMIZE
+var twoSum = function(nums, target) {
+  let sum = 0;
+  let arr =[];
+  let compare;
+
+  for(let i = 0; i < nums.length; i++) {
+    // console.log(`This is i: ${nums[i]}`);
+    if(nums[i] === target) {
+      arr.push(nums[i]);
+      console.log(arr);
+      return arr;
+    }
+    for(let j = 0; j < nums.length; j++) {
+      // console.log(`This is j: ${nums[j]}`);
+      compare = nums[i] + nums[j];
+      if(compare === target) {
+        console.log(`Found it!!! ${nums[i]} & ${nums[j]}`);
+        arr.push(nums[i], nums[j]);
+        console.log(arr);
+        return arr;
+      }
+    }
+  }
+  
+};
+
+let nums = [2, 7, 11, 15, 4, 7, 8, 67, 0];
+let target = 15;
+
+twoSum(nums, target);
 
 
