@@ -235,6 +235,27 @@ var twoSum = function(nums, target) {
 let nums = [2, 7, 11, 15, 4, 7, 8, 67, 0];
 let target = 15;
 
-twoSum(nums, target);
+// twoSum(nums, target);
 
 
+function regexVar(s) {
+  /*
+   * Declare a RegExp object variable named 're'
+   * It must match a string that starts with 'Mr.', 'Mrs.', 'Ms.', 'Dr.', or 'Er.', 
+   * followed by one or more letters.
+   */
+  
+  
+  /*
+   * Do not remove the return statement
+   */
+
+  // const re = /^(Mr?s|[MDE]r)\.[A-Za-z]+$/;
+  const re = /^[MDE][rs]s?\.[A-z]+$/;
+  // let re=/([M|E|D][r|s]s?)\.[A-z]+$/;
+   console.log(re.test(s));
+  return re;
+}
+
+console.log(regexVar('Ms.A'));
+console.log(regexVar('Ms. A'));
